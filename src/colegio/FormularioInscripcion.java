@@ -1,8 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
+ 
 package colegio;
+
+import java.util.HashSet;
 
 /**
  *
@@ -13,8 +13,12 @@ public class FormularioInscripcion extends javax.swing.JFrame {
     /**
      * Creates new form FormularioInscripcion
      */
+    
     public FormularioInscripcion() {
         initComponents();
+        
+        
+        
     }
 
     /**
@@ -42,14 +46,11 @@ public class FormularioInscripcion extends javax.swing.JFrame {
 
         jLabel3.setText("ELIJA UN ALUMNO");
 
-        cbx_materias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cbx_materias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_materiasActionPerformed(evt);
             }
         });
-
-        cbx_alumnos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         bt_inscribir.setText("INSCRIBIR");
 
@@ -141,6 +142,20 @@ public class FormularioInscripcion extends javax.swing.JFrame {
                 new FormularioInscripcion().setVisible(true);
             }
         });
+    }
+    
+    public void agregarMaterias (HashSet<Materia>listadematerias){
+        for (Materia listademateria : listadematerias) {
+            cbx_materias.addItem(listademateria.getNombre());
+            
+        }
+    }
+    
+    public void agregarAlumno (HashSet<Alumno>listadealumnos){
+        for (Alumno elemento : listadealumnos) {
+            cbx_alumnos.addItem(elemento.getNombre());
+            
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
