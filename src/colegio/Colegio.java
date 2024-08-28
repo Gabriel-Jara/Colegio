@@ -11,7 +11,7 @@ public class Colegio {
 
     public static void main(String[] args) {
         HashSet<Materia> materiasDisponibles = new HashSet();
-        HashSet<Materia> alumnosInscriptos = new HashSet();
+        HashSet<Alumno> alumnosInscriptos = new HashSet();
         
         FormularioMateria form = new FormularioMateria();
         form.setVisible(true);
