@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package colegio;
 
 /**
@@ -13,6 +10,7 @@ public class FormularioMateria extends javax.swing.JFrame {
     /**
      * Creates new form FormularioMateria
      */
+    
     public FormularioMateria() {
         initComponents();
         bt_guardar.setEnabled(false);
@@ -67,6 +65,11 @@ public class FormularioMateria extends javax.swing.JFrame {
         });
 
         bt_salir.setText("SALIR");
+        bt_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_salirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -139,7 +142,15 @@ public class FormularioMateria extends javax.swing.JFrame {
         txt_codigo.setEnabled(true);
         txt_nombreMateria.setEnabled(true);
         txt_anio.setEnabled(true);
+        
+        
     }//GEN-LAST:event_bt_nuevoActionPerformed
+
+    private void bt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_bt_salirActionPerformed
 
     /**
      * @param args the command line arguments
