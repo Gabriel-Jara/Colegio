@@ -1,24 +1,20 @@
-
- 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+ */
 package colegio;
-
-import java.util.HashSet;
 
 /**
  *
  * @author Gabriel Jara
  */
-public class FormularioInscripcion extends javax.swing.JFrame {
+public class InternalInscripcion extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form FormularioInscripcion
+     * Creates new form InternalInscripcion
      */
-    
-    public FormularioInscripcion() {
+    public InternalInscripcion() {
         initComponents();
-        
-        
-        
     }
 
     /**
@@ -38,8 +34,6 @@ public class FormularioInscripcion extends javax.swing.JFrame {
         bt_inscribir = new javax.swing.JButton();
         bt_salir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabel1.setText("FORMULARIO DE INSCRIPCIÓN");
 
         jLabel2.setText("ELIJA UNA MATERIA");
@@ -55,6 +49,11 @@ public class FormularioInscripcion extends javax.swing.JFrame {
         bt_inscribir.setText("INSCRIBIR");
 
         bt_salir.setText("SALIR");
+        bt_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_salirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,7 +79,7 @@ public class FormularioInscripcion extends javax.swing.JFrame {
                         .addComponent(bt_inscribir)
                         .addGap(54, 54, 54)
                         .addComponent(bt_salir)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,7 +94,7 @@ public class FormularioInscripcion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(cbx_alumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bt_salir)
                     .addComponent(bt_inscribir))
@@ -109,54 +108,10 @@ public class FormularioInscripcion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbx_materiasActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormularioInscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormularioInscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormularioInscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormularioInscripcion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void bt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_bt_salirActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormularioInscripcion().setVisible(true);
-            }
-        });
-    }
-    
-    public void agregarMaterias (HashSet<Materia>listadematerias){
-        for (Materia listademateria : listadematerias) {
-            cbx_materias.addItem(listademateria.getNombre());
-            
-        }
-    }
-    
-    public void agregarAlumno (HashSet<Alumno>listadealumnos){
-        for (Alumno elemento : listadealumnos) {
-            cbx_alumnos.addItem(elemento.getNombre());
-            
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_inscribir;
