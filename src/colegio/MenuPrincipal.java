@@ -156,6 +156,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         InternalMateria formCargaMateria = new InternalMateria();
         desktop_principal.add(formCargaMateria);
         formCargaMateria.setVisible(true);
+        formCargaMateria.setListaMaterias(listaMaterias);
     }//GEN-LAST:event_menu_cargarMateriasActionPerformed
 
     private void menu_inscripcionMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_inscripcionMateriasActionPerformed

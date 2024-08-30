@@ -1,11 +1,14 @@
-
 package colegio;
+
+import java.util.HashSet;
 
 /**
  *
  * @author Gabriel Jara
  */
 public class InternalMateria extends javax.swing.JInternalFrame {
+
+    private HashSet<Materia> listaMaterias;
 
     /**
      * Creates new form InternalMateria
@@ -137,7 +140,7 @@ public class InternalMateria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_bt_nuevoActionPerformed
 
     private void bt_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_guardarActionPerformed
-        
+
     }//GEN-LAST:event_bt_guardarActionPerformed
 
     private void bt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirActionPerformed
@@ -146,6 +149,9 @@ public class InternalMateria extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_bt_salirActionPerformed
 
+    public void setListaMaterias(HashSet<Materia> lista) {
+        this.listaMaterias = lista;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_guardar;
