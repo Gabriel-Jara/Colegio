@@ -47,6 +47,11 @@ public class InternalInscripcion extends javax.swing.JInternalFrame {
         });
 
         bt_inscribir.setText("INSCRIBIR");
+        bt_inscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_inscribirActionPerformed(evt);
+            }
+        });
 
         bt_salir.setText("SALIR");
         bt_salir.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +116,10 @@ public class InternalInscripcion extends javax.swing.JInternalFrame {
     private void bt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_bt_salirActionPerformed
+
+    private void bt_inscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_inscribirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_inscribirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

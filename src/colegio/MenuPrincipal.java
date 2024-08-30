@@ -1,21 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package colegio;
+
+import java.util.HashSet;
 
 /**
  *
  * @author Gabriel Jara
  */
 public class MenuPrincipal extends javax.swing.JFrame {
-
+    private HashSet<Alumno> listaAlumnos;
+    private HashSet<Materia> listaMaterias;
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,10 +28,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         desktop_principal = new javax.swing.JDesktopPane();
-        btn_agregarMateria = new javax.swing.JButton();
-        btn_agregarAlumno = new javax.swing.JButton();
-        btn_inscribir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        menu_cargarAlumno = new javax.swing.JMenuItem();
+        menu_verMaterias = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        menu_cargarMaterias = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        menu_inscripcionMaterias = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menú principal del Colegio");
@@ -53,27 +57,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGap(0, 323, Short.MAX_VALUE)
         );
 
-        btn_agregarMateria.setText("AGREGAR MATERIA");
-        btn_agregarMateria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_agregarMateriaActionPerformed(evt);
-            }
-        });
-
-        btn_agregarAlumno.setText("AGREGAR ALUMNO");
-        btn_agregarAlumno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_agregarAlumnoActionPerformed(evt);
-            }
-        });
-
-        btn_inscribir.setText("INSCRIPCIÓN");
-        btn_inscribir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_inscribirActionPerformed(evt);
-            }
-        });
-
         jLabel1.setText("COLEGIO");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -87,14 +70,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(60, 60, 60)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(desktop_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_agregarMateria)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_agregarAlumno)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_inscribir)))))
+                        .addComponent(desktop_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -102,15 +78,56 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_agregarMateria)
-                    .addComponent(btn_agregarAlumno)
-                    .addComponent(btn_inscribir))
-                .addGap(44, 44, 44)
+                .addGap(93, 93, 93)
                 .addComponent(desktop_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(46, Short.MAX_VALUE))
         );
+
+        jMenu1.setText("Alumnos");
+
+        menu_cargarAlumno.setText("Cargar Alumnos");
+        menu_cargarAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_cargarAlumnoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menu_cargarAlumno);
+
+        menu_verMaterias.setText("Materias asignadas");
+        menu_verMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_verMateriasActionPerformed(evt);
+            }
+        });
+        jMenu1.add(menu_verMaterias);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Materias");
+
+        menu_cargarMaterias.setText("Agregar materias");
+        menu_cargarMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_cargarMateriasActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menu_cargarMaterias);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Inscripción");
+
+        menu_inscripcionMaterias.setText("Inscribir en materias");
+        menu_inscripcionMaterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_inscripcionMateriasActionPerformed(evt);
+            }
+        });
+        jMenu3.add(menu_inscripcionMaterias);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,30 +139,38 @@ public class MenuPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_agregarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarMateriaActionPerformed
-        InternalMateria intMateria = new InternalMateria();//REVISAR PORQUE CREA UNA NUEVA VENTANA CADA VEZ QUE SE PRESIONA EL BOTÓN
-        desktop_principal.add(intMateria);
-        intMateria.setVisible(true);
-    }//GEN-LAST:event_btn_agregarMateriaActionPerformed
+    private void menu_cargarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cargarAlumnoActionPerformed
+        InternalAlumnos formCargaAlumnos = new InternalAlumnos();
+        desktop_principal.add(formCargaAlumnos);
+        formCargaAlumnos.setVisible(true);
+    }//GEN-LAST:event_menu_cargarAlumnoActionPerformed
 
-    private void btn_inscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inscribirActionPerformed
-        InternalInscripcion intInscripcion = new InternalInscripcion();
-        desktop_principal.add(intInscripcion);
-        intInscripcion.setVisible(true);
-    }//GEN-LAST:event_btn_inscribirActionPerformed
+    private void menu_cargarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cargarMateriasActionPerformed
+        InternalMateria formCargaMateria = new InternalMateria();
+        desktop_principal.add(formCargaMateria);
+        formCargaMateria.setVisible(true);
+    }//GEN-LAST:event_menu_cargarMateriasActionPerformed
 
-    private void btn_agregarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarAlumnoActionPerformed
-        InternalAlumnos intAlumno = new InternalAlumnos();
-        desktop_principal.add(intAlumno);
-        intAlumno.setVisible(true); // REVISAR TODOS ESTOS MÉTODOS PORQUE ADEMÁS PERMITEN QUE ESTÉN TODOS LOS INTERNAL FRAMES ABIERTOS A LA VEZ
-    }//GEN-LAST:event_btn_agregarAlumnoActionPerformed
+    private void menu_inscripcionMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_inscripcionMateriasActionPerformed
+        InternalInscripcion formInscripcion = new InternalInscripcion();
+        desktop_principal.add(formInscripcion);
+        formInscripcion.setVisible(true);
+    }//GEN-LAST:event_menu_inscripcionMateriasActionPerformed
 
+    private void menu_verMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_verMateriasActionPerformed
+        InternalMostrarMaterias formMostrarMaterias = new InternalMostrarMaterias();
+        desktop_principal.add(formMostrarMaterias);
+        formMostrarMaterias.setVisible(true);
+    }//GEN-LAST:event_menu_verMateriasActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -180,13 +205,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
     }
-
+    public void cargarListaAlumnos(HashSet<Alumno> lista){
+        this.listaAlumnos = lista;
+    }
+    
+    public void cargarListaMaterias(HashSet<Materia> lista){
+        this.listaMaterias = lista;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_agregarAlumno;
-    private javax.swing.JButton btn_agregarMateria;
-    private javax.swing.JButton btn_inscribir;
     private javax.swing.JDesktopPane desktop_principal;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem menu_cargarAlumno;
+    private javax.swing.JMenuItem menu_cargarMaterias;
+    private javax.swing.JMenuItem menu_inscripcionMaterias;
+    private javax.swing.JMenuItem menu_verMaterias;
     // End of variables declaration//GEN-END:variables
 }
