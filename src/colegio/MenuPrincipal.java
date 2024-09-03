@@ -147,12 +147,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menu_cargarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cargarAlumnoActionPerformed
+        desktop_principal.removeAll();
+        desktop_principal.repaint();
         InternalAlumnos formCargaAlumnos = new InternalAlumnos();
         desktop_principal.add(formCargaAlumnos);
         formCargaAlumnos.setVisible(true);
     }//GEN-LAST:event_menu_cargarAlumnoActionPerformed
 
     private void menu_cargarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cargarMateriasActionPerformed
+        desktop_principal.removeAll();
+        desktop_principal.repaint();
         InternalMateria formCargaMateria = new InternalMateria();
         desktop_principal.add(formCargaMateria);
         formCargaMateria.setVisible(true);
@@ -160,12 +164,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menu_cargarMateriasActionPerformed
 
     private void menu_inscripcionMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_inscripcionMateriasActionPerformed
+       desktop_principal.removeAll();
+        desktop_principal.repaint();
         InternalInscripcion formInscripcion = new InternalInscripcion();
         desktop_principal.add(formInscripcion);
         formInscripcion.setVisible(true);
     }//GEN-LAST:event_menu_inscripcionMateriasActionPerformed
 
     private void menu_verMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_verMateriasActionPerformed
+       desktop_principal.removeAll();
+        desktop_principal.repaint();
         InternalMostrarMaterias formMostrarMaterias = new InternalMostrarMaterias();
         desktop_principal.add(formMostrarMaterias);
         formMostrarMaterias.setVisible(true);
