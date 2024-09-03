@@ -28,7 +28,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         desktop_principal = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menu_cargarAlumno = new javax.swing.JMenuItem();
@@ -42,6 +41,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setTitle("Menú principal del Colegio");
         setResizable(false);
 
+        jPanel1.setForeground(new java.awt.Color(0, 102, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(575, 588));
 
         desktop_principal.setPreferredSize(new java.awt.Dimension(421, 323));
@@ -50,41 +50,39 @@ public class MenuPrincipal extends javax.swing.JFrame {
         desktop_principal.setLayout(desktop_principalLayout);
         desktop_principalLayout.setHorizontalGroup(
             desktop_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 421, Short.MAX_VALUE)
+            .addGap(0, 517, Short.MAX_VALUE)
         );
         desktop_principalLayout.setVerticalGroup(
             desktop_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 323, Short.MAX_VALUE)
+            .addGap(0, 399, Short.MAX_VALUE)
         );
-
-        jLabel1.setText("COLEGIO");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(desktop_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(desktop_principal, javax.swing.GroupLayout.PREFERRED_SIZE, 517, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1)
-                .addGap(93, 93, 93)
-                .addComponent(desktop_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(desktop_principal, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jMenu1.setBackground(new java.awt.Color(153, 204, 255));
+        jMenu1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jMenu1.setForeground(new java.awt.Color(0, 0, 0));
         jMenu1.setText("Alumnos");
 
+        menu_cargarAlumno.setBackground(new java.awt.Color(204, 255, 255));
+        menu_cargarAlumno.setForeground(new java.awt.Color(0, 0, 255));
         menu_cargarAlumno.setText("Cargar Alumnos");
         menu_cargarAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +91,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(menu_cargarAlumno);
 
+        menu_verMaterias.setBackground(new java.awt.Color(204, 255, 255));
+        menu_verMaterias.setForeground(new java.awt.Color(0, 0, 255));
         menu_verMaterias.setText("Materias asignadas");
         menu_verMaterias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,8 +103,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setBackground(new java.awt.Color(153, 204, 255));
+        jMenu2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jMenu2.setForeground(new java.awt.Color(0, 0, 0));
         jMenu2.setText("Materias");
 
+        menu_cargarMaterias.setBackground(new java.awt.Color(204, 255, 255));
+        menu_cargarMaterias.setForeground(new java.awt.Color(0, 0, 255));
         menu_cargarMaterias.setText("Agregar materias");
         menu_cargarMaterias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,8 +120,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setBackground(new java.awt.Color(153, 204, 255));
+        jMenu3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jMenu3.setForeground(new java.awt.Color(0, 0, 0));
         jMenu3.setText("Inscripción");
 
+        menu_inscripcionMaterias.setBackground(new java.awt.Color(204, 255, 255));
+        menu_inscripcionMaterias.setForeground(new java.awt.Color(0, 0, 255));
         menu_inscripcionMaterias.setText("Inscribir en materias");
         menu_inscripcionMaterias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,7 +234,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktop_principal;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
