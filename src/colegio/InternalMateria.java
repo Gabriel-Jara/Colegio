@@ -13,12 +13,13 @@ public class InternalMateria extends javax.swing.JInternalFrame {
     /**
      * Creates new form InternalMateria
      */
-    public InternalMateria() {
+    public InternalMateria(HashSet lista) {
         initComponents();
         bt_guardar.setEnabled(false);
         txt_codigo.setEnabled(false);
         txt_nombreMateria.setEnabled(false);
         txt_anio.setEnabled(false);
+        listaMaterias = lista;
     }
 
     /**
@@ -140,7 +141,11 @@ public class InternalMateria extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_bt_nuevoActionPerformed
 
     private void bt_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_guardarActionPerformed
-
+        int codigo = Integer.parseInt(txt_codigo.getText());
+        String nombre = txt_nombreMateria.getText();
+        int anio = Integer.parseInt(txt_anio.getText());
+        Materia materiaNueva = new Materia(codigo,nombre,anio);
+        this.listaMaterias.add(materiaNueva);
     }//GEN-LAST:event_bt_guardarActionPerformed
 
     private void bt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirActionPerformed

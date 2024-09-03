@@ -8,8 +8,8 @@ import java.util.HashSet;
  * @author Gabriel Jara
  */
 public class MenuPrincipal extends javax.swing.JFrame {
-    private HashSet<Alumno> listaAlumnos;
-    private HashSet<Materia> listaMaterias;
+    private HashSet<Alumno> listaAlumnos = new HashSet();
+    private HashSet<Materia> listaMaterias  = new HashSet();
     /**
      * Creates new form MenuPrincipal
      */
@@ -167,16 +167,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void menu_cargarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cargarMateriasActionPerformed
         desktop_principal.removeAll();
         desktop_principal.repaint();
-        InternalMateria formCargaMateria = new InternalMateria();
+        InternalMateria formCargaMateria = new InternalMateria(listaMaterias);
         desktop_principal.add(formCargaMateria);
         formCargaMateria.setVisible(true);
-        formCargaMateria.setListaMaterias(listaMaterias);
     }//GEN-LAST:event_menu_cargarMateriasActionPerformed
 
     private void menu_inscripcionMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_inscripcionMateriasActionPerformed
        desktop_principal.removeAll();
         desktop_principal.repaint();
-        InternalInscripcion formInscripcion = new InternalInscripcion();
+        InternalInscripcion formInscripcion = new InternalInscripcion(listaMaterias,listaAlumnos);
         desktop_principal.add(formInscripcion);
         formInscripcion.setVisible(true);
     }//GEN-LAST:event_menu_inscripcionMateriasActionPerformed

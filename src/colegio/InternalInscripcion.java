@@ -4,17 +4,23 @@
  */
 package colegio;
 
+import java.util.HashSet;
+
 /**
  *
  * @author Gabriel Jara
  */
 public class InternalInscripcion extends javax.swing.JInternalFrame {
-
+    private HashSet<Materia> listaMaterias;
+    private HashSet<Alumno> listaAlumnos;
     /**
      * Creates new form InternalInscripcion
      */
-    public InternalInscripcion() {
+    public InternalInscripcion(HashSet materias, HashSet alumnos) {
         initComponents();
+        this.listaMaterias = materias;
+        this.listaAlumnos = alumnos;
+        cargarMaterias();
     }
 
     /**
@@ -110,7 +116,7 @@ public class InternalInscripcion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbx_materiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_materiasActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_cbx_materiasActionPerformed
 
     private void bt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirActionPerformed
@@ -121,6 +127,11 @@ public class InternalInscripcion extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bt_inscribirActionPerformed
 
+    public void cargarMaterias(){
+        for (Materia elem : listaMaterias) {            
+        cbx_materias.addItem(elem.getNombre());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_inscribir;

@@ -14,6 +14,7 @@ public class Materia {
         this.idMateria = idMateria;
         this.nombre = nombre;
         this.anio = anio;
+        System.out.println("Se creó la materia "+nombre);
     }
 
     public int getIdMateria() {
