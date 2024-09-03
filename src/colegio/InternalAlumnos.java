@@ -15,6 +15,10 @@ public class InternalAlumnos extends javax.swing.JInternalFrame {
      */
     public InternalAlumnos() {
         initComponents();
+        txt_legajo.setEnabled(false);
+        txt_apellido.setEnabled(false);
+        txt_nombreAlumno.setEnabled(false);
+        bt_guardarAlumno.setEnabled(false);
     }
 
     /**
@@ -129,7 +133,10 @@ public class InternalAlumnos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bt_nuevoAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_nuevoAlumnoActionPerformed
-
+        txt_legajo.setEnabled(true);
+        txt_apellido.setEnabled(true);
+        txt_nombreAlumno.setEnabled(true);
+        bt_guardarAlumno.setEnabled(true);
     }//GEN-LAST:event_bt_nuevoAlumnoActionPerformed
 
     private void bt_guardarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_guardarAlumnoActionPerformed
