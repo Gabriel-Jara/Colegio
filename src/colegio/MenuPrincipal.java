@@ -46,42 +46,41 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         desktop_principal.setPreferredSize(new java.awt.Dimension(421, 323));
 
-        jLabel1.setText("COLEGIO");
-
-        desktop_principal.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
         javax.swing.GroupLayout desktop_principalLayout = new javax.swing.GroupLayout(desktop_principal);
         desktop_principal.setLayout(desktop_principalLayout);
         desktop_principalLayout.setHorizontalGroup(
             desktop_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(desktop_principalLayout.createSequentialGroup()
-                .addGap(223, 223, 223)
-                .addComponent(jLabel1)
-                .addContainerGap(291, Short.MAX_VALUE))
+            .addGap(0, 421, Short.MAX_VALUE)
         );
         desktop_principalLayout.setVerticalGroup(
             desktop_principalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(desktop_principalLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addContainerGap(458, Short.MAX_VALUE))
+            .addGap(0, 323, Short.MAX_VALUE)
         );
+
+        jLabel1.setText("COLEGIO");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(desktop_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(239, 239, 239)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(desktop_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(desktop_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
+                .addGap(93, 93, 93)
+                .addComponent(desktop_principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Alumnos");
@@ -148,18 +147,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void menu_cargarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cargarAlumnoActionPerformed
-        desktop_principal.removeAll();
-        desktop_principal.repaint();
         InternalAlumnos formCargaAlumnos = new InternalAlumnos();
         desktop_principal.add(formCargaAlumnos);
         formCargaAlumnos.setVisible(true);
-        
-        
     }//GEN-LAST:event_menu_cargarAlumnoActionPerformed
 
     private void menu_cargarMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cargarMateriasActionPerformed
-        desktop_principal.removeAll();
-        desktop_principal.repaint();
         InternalMateria formCargaMateria = new InternalMateria();
         desktop_principal.add(formCargaMateria);
         formCargaMateria.setVisible(true);
@@ -167,16 +160,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menu_cargarMateriasActionPerformed
 
     private void menu_inscripcionMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_inscripcionMateriasActionPerformed
-        desktop_principal.removeAll();
-        desktop_principal.repaint();
         InternalInscripcion formInscripcion = new InternalInscripcion();
         desktop_principal.add(formInscripcion);
         formInscripcion.setVisible(true);
     }//GEN-LAST:event_menu_inscripcionMateriasActionPerformed
 
     private void menu_verMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_verMateriasActionPerformed
-        desktop_principal.removeAll();
-        desktop_principal.repaint();
         InternalMostrarMaterias formMostrarMaterias = new InternalMostrarMaterias();
         desktop_principal.add(formMostrarMaterias);
         formMostrarMaterias.setVisible(true);
