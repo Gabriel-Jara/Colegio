@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
+
 package colegio;
 
 import java.util.HashSet;
@@ -13,13 +10,13 @@ import javax.swing.DefaultListModel;
  */
 public class InternalMostrarMaterias extends javax.swing.JInternalFrame {
 private HashSet<Alumno>listaAlumnos;
-DefaultListModel modelo = new DefaultListModel(); //Crea modelo para utilizar en lista. Se lo asocia en línea 22
+DefaultListModel modelo = new DefaultListModel(); //Crea modelo para utilizar en lista. Se lo asocia en línea 19
  
     public InternalMostrarMaterias(HashSet<Alumno>lista) {
         initComponents();
         this.listaAlumnos = lista;
         cargarAlumnos();
-        listado.setModel(modelo); // Se asocia el modelo (creado en linea 16) al listado para poder cargarle elementos
+        listado.setModel(modelo); // Se asocia el modelo (creado en linea 13) al listado para poder cargarle elementos
     }
 
 
