@@ -4,21 +4,25 @@
  */
 package colegio;
 
+import java.util.HashSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Gabriel Jara
  */
 public class InternalAlumnos extends javax.swing.JInternalFrame {
-
+    private HashSet <Alumno> listaAlumnos;
     /**
      * Creates new form InternalAlumnos
      */
-    public InternalAlumnos() {
+    public InternalAlumnos(HashSet<Alumno>lista) {
         initComponents();
         txt_legajo.setEnabled(false);
         txt_apellido.setEnabled(false);
         txt_nombreAlumno.setEnabled(false);
         bt_guardarAlumno.setEnabled(false);
+        listaAlumnos = lista;
     }
 
     /**
@@ -137,16 +141,38 @@ public class InternalAlumnos extends javax.swing.JInternalFrame {
         txt_apellido.setEnabled(true);
         txt_nombreAlumno.setEnabled(true);
         bt_guardarAlumno.setEnabled(true);
+        bt_nuevoAlumno.setEnabled(false);
     }//GEN-LAST:event_bt_nuevoAlumnoActionPerformed
 
     private void bt_guardarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_guardarAlumnoActionPerformed
-
+        if (!validarCamposVacios()) {
+            
+        int legajo = Integer.parseInt(txt_legajo.getText()) ;
+        String apellido = txt_apellido.getText();
+        String nombre = txt_nombreAlumno.getText();
+        Alumno alumnoNuevo = new Alumno(legajo, apellido, nombre);
+        this.listaAlumnos.add(alumnoNuevo);
+        bt_nuevoAlumno.setEnabled(true);
+        txt_legajo.setText("");
+        txt_apellido.setText("");
+        txt_nombreAlumno.setText("");
+        bt_guardarAlumno.setEnabled(false);
+        txt_legajo.setEnabled(false);
+        txt_apellido.setEnabled(false);
+        txt_nombreAlumno.setEnabled(false);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Debe llenar todos los campos");
+        }
     }//GEN-LAST:event_bt_guardarAlumnoActionPerformed
 
     private void bt_salirAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirAlumnoActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_bt_salirAlumnoActionPerformed
-
+    public boolean validarCamposVacios(){
+       return txt_legajo.getText().equals("")||txt_apellido.getText().equals("")||txt_nombreAlumno.getText().equals("");
+       
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bt_guardarAlumno;

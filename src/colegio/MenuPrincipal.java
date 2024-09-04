@@ -159,7 +159,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void menu_cargarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_cargarAlumnoActionPerformed
         desktop_principal.removeAll();
         desktop_principal.repaint();
-        InternalAlumnos formCargaAlumnos = new InternalAlumnos();
+        InternalAlumnos formCargaAlumnos = new InternalAlumnos(listaAlumnos);
         desktop_principal.add(formCargaAlumnos);
         formCargaAlumnos.setVisible(true);
     }//GEN-LAST:event_menu_cargarAlumnoActionPerformed
@@ -183,7 +183,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void menu_verMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_verMateriasActionPerformed
        desktop_principal.removeAll();
         desktop_principal.repaint();
-        InternalMostrarMaterias formMostrarMaterias = new InternalMostrarMaterias();
+        InternalMostrarMaterias formMostrarMaterias = new InternalMostrarMaterias(listaAlumnos);
         desktop_principal.add(formMostrarMaterias);
         formMostrarMaterias.setVisible(true);
     }//GEN-LAST:event_menu_verMateriasActionPerformed

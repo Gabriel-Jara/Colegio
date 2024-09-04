@@ -50,4 +50,14 @@ public class Alumno {
     public int cantidadMaterias(){
         return listaMaterias.size();
     }
+
+    @Override
+    public String toString() {
+        return legajo + "- " + apellido + " " + nombre;
+    }
+
+    public HashSet<Materia> getListaMaterias() {
+        return listaMaterias;
+    }
+    
 }

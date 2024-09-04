@@ -1,6 +1,7 @@
 package colegio;
 
 import java.util.HashSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -137,15 +138,29 @@ public class InternalMateria extends javax.swing.JInternalFrame {
         txt_codigo.setEnabled(true);
         txt_nombreMateria.setEnabled(true);
         txt_anio.setEnabled(true);
-
+        bt_nuevo.setEnabled(false);
     }//GEN-LAST:event_bt_nuevoActionPerformed
 
     private void bt_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_guardarActionPerformed
+        if (!validarCamposVacios()) {
+            
         int codigo = Integer.parseInt(txt_codigo.getText());
         String nombre = txt_nombreMateria.getText();
         int anio = Integer.parseInt(txt_anio.getText());
         Materia materiaNueva = new Materia(codigo,nombre,anio);
         this.listaMaterias.add(materiaNueva);
+         bt_nuevo.setEnabled(true);
+         txt_anio.setText("");
+         txt_codigo.setText("");
+         txt_nombreMateria.setText("");
+         bt_guardar.setEnabled(false);
+         txt_codigo.setEnabled(false);
+        txt_nombreMateria.setEnabled(false);
+        txt_anio.setEnabled(false);
+        }
+          else{
+         JOptionPane.showMessageDialog(this, "Debe llenar todos los campos");
+        }
     }//GEN-LAST:event_bt_guardarActionPerformed
 
     private void bt_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_salirActionPerformed
@@ -154,6 +169,10 @@ public class InternalMateria extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_bt_salirActionPerformed
 
+     public boolean validarCamposVacios(){
+       return txt_anio.getText().equals("")||txt_codigo.getText().equals("")||txt_nombreMateria.getText().equals("");
+       
+    }
     public void setListaMaterias(HashSet<Materia> lista) {
         this.listaMaterias = lista;
     }
