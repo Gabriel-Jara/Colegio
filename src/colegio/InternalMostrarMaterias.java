@@ -13,13 +13,13 @@ import javax.swing.DefaultListModel;
  */
 public class InternalMostrarMaterias extends javax.swing.JInternalFrame {
 private HashSet<Alumno>listaAlumnos;
-DefaultListModel modelo = new DefaultListModel();
+DefaultListModel modelo = new DefaultListModel(); //Crea modelo para utilizar en lista. Se lo asocia en línea 22
  
     public InternalMostrarMaterias(HashSet<Alumno>lista) {
         initComponents();
         this.listaAlumnos = lista;
         cargarAlumnos();
-        listado.setModel(modelo);
+        listado.setModel(modelo); // Se asocia el modelo (creado en linea 16) al listado para poder cargarle elementos
     }
 
 
@@ -111,9 +111,9 @@ DefaultListModel modelo = new DefaultListModel();
     private void cbx_alumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_alumnosActionPerformed
         Alumno alumno = (Alumno)cbx_alumnos.getSelectedItem();
         HashSet<Materia>lista = alumno.getListaMaterias();
-        modelo.removeAllElements();
+        modelo.removeAllElements(); // Se utiliza para borrar los elementos que ya estaban en el listado cada vez que se seleccione otro alumno.
         for (Materia materia : lista) {
-            modelo.addElement(materia);
+            modelo.addElement(materia); // Se cargan al listado las materias del alumno seleccionado en el combobox.
         }
     }//GEN-LAST:event_cbx_alumnosActionPerformed
 
