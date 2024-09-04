@@ -5,6 +5,7 @@
 package colegio;
 
 import java.util.HashSet;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -12,11 +13,13 @@ import java.util.HashSet;
  */
 public class InternalMostrarMaterias extends javax.swing.JInternalFrame {
 private HashSet<Alumno>listaAlumnos;
+DefaultListModel modelo = new DefaultListModel();
  
     public InternalMostrarMaterias(HashSet<Alumno>lista) {
         initComponents();
         this.listaAlumnos = lista;
         cargarAlumnos();
+        listado.setModel(modelo);
     }
 
 
@@ -108,7 +111,10 @@ private HashSet<Alumno>listaAlumnos;
     private void cbx_alumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_alumnosActionPerformed
         Alumno alumno = (Alumno)cbx_alumnos.getSelectedItem();
         HashSet<Materia>lista = alumno.getListaMaterias();
-       // listado.;
+        modelo.removeAllElements();
+        for (Materia materia : lista) {
+            modelo.addElement(materia);
+        }
     }//GEN-LAST:event_cbx_alumnosActionPerformed
 
 public void cargarAlumnos(){
