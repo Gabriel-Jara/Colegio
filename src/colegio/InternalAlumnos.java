@@ -156,6 +156,7 @@ public class InternalAlumnos extends javax.swing.JInternalFrame {
         }
         else{
             JOptionPane.showMessageDialog(this, "Debe llenar todos los campos");
+            
         }
     }//GEN-LAST:event_bt_guardarAlumnoActionPerformed
 
