@@ -23,7 +23,6 @@ public class InternalMateria extends javax.swing.JInternalFrame {
         listaMaterias = lista;
     }
 
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -139,23 +138,26 @@ public class InternalMateria extends javax.swing.JInternalFrame {
 
     private void bt_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_guardarActionPerformed
         if (!validarCamposVacios()) {
-            
-        int codigo = Integer.parseInt(txt_codigo.getText());
-        String nombre = txt_nombreMateria.getText();
-        int anio = Integer.parseInt(txt_anio.getText());
-        Materia materiaNueva = new Materia(codigo,nombre,anio);
-        this.listaMaterias.add(materiaNueva);
-         bt_nuevo.setEnabled(true);
-         txt_anio.setText("");
-         txt_codigo.setText("");
-         txt_nombreMateria.setText("");
-         bt_guardar.setEnabled(false);
-         txt_codigo.setEnabled(false);
-        txt_nombreMateria.setEnabled(false);
-        txt_anio.setEnabled(false);
-        }
-          else{
-         JOptionPane.showMessageDialog(this, "Debe llenar todos los campos");
+            if (!verificarID()) {
+                int codigo = Integer.parseInt(txt_codigo.getText());
+                String nombre = txt_nombreMateria.getText();
+                int anio = Integer.parseInt(txt_anio.getText());
+                Materia materiaNueva = new Materia(codigo, nombre, anio);
+                this.listaMaterias.add(materiaNueva);
+                bt_nuevo.setEnabled(true);
+                txt_anio.setText("");
+                txt_codigo.setText("");
+                txt_nombreMateria.setText("");
+                bt_guardar.setEnabled(false);
+                txt_codigo.setEnabled(false);
+                txt_nombreMateria.setEnabled(false);
+                txt_anio.setEnabled(false);
+            } else {
+                JOptionPane.showMessageDialog(this, "Ya existe una materia con el mismo ID. Ingrese un nuevo ID");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Debe llenar todos los campos");
         }
     }//GEN-LAST:event_bt_guardarActionPerformed
 
@@ -165,12 +167,24 @@ public class InternalMateria extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_bt_salirActionPerformed
 
-     public boolean validarCamposVacios(){
-       return txt_anio.getText().equals("")||txt_codigo.getText().equals("")||txt_nombreMateria.getText().equals("");
-       
+    public boolean validarCamposVacios() {
+        return txt_anio.getText().equals("") || txt_codigo.getText().equals("") || txt_nombreMateria.getText().equals("");
+
     }
+
     public void setListaMaterias(HashSet<Materia> lista) {
         this.listaMaterias = lista;
+    }
+
+    public boolean verificarID() {
+        int id_ingresado = Integer.parseInt(txt_codigo.getText());
+        boolean existeID = false;
+        for (Materia materia : listaMaterias) {
+            if (materia.getIdMateria() == id_ingresado) {
+                existeID = true;
+            }
+        }
+        return existeID;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
